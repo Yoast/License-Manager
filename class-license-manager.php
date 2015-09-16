@@ -258,7 +258,7 @@ if ( ! class_exists( 'Yoast_License_Manager', false ) ) {
 				'edd_action' => $action . '_license',
 				'license'    => $this->get_license_key(),
 				'item_name'  => urlencode( trim( $this->product->get_item_name() ) ),
-				'url'        => get_option( 'home' )                                    // grab the URL straight from the option to prevent filters from breaking it.
+				'url'        => home_url(),                                    // grab the URL straight from the option to prevent filters from breaking it.
 			);
 
 			// create api request url
