@@ -115,7 +115,7 @@ if( ! class_exists( "Yoast_Update_Manager", false ) ) {
 				'item_name'       => $this->product->get_item_name(),
 				'wp_version'       => $wp_version,
 				'item_version'     => $this->product->get_version(),
-				'url' => home_url(),
+				'url' => site_url(),
 				'slug' => $this->product->get_slug()
 			);
 
