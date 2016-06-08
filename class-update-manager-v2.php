@@ -1,16 +1,16 @@
 <?php
 
-if( ! class_exists( "Yoast_Update_Manager", false ) ) {
+if( ! class_exists( "Yoast_Update_Manager_v2", false ) ) {
 
-	class Yoast_Update_Manager {
+	class Yoast_Update_Manager_v2 {
 
 		/**
-		 * @var Yoast_Product
+		 * @var Yoast_Product_v2
 		 */
 		protected $product;
 
 		/**
-		 * @var Yoast_License_Manager
+		 * @var Yoast_License_Manager_v2
 		 */
 		protected $license_manager;
 
@@ -44,7 +44,7 @@ if( ! class_exists( "Yoast_Update_Manager", false ) ) {
 		 * @param string $version     The current plugin or theme version
 		 * @param string $author      (optional) The item author.
 		 */
-		public function __construct( Yoast_Product $product, $license_manager ) {
+		public function __construct( Yoast_Product_v2 $product, $license_manager ) {
 			$this->product = $product;
 			$this->license_manager = $license_manager;
 
@@ -126,7 +126,7 @@ if( ! class_exists( "Yoast_Update_Manager", false ) ) {
 			);
 
 			require_once dirname( __FILE__ ) . '/class-api-request.php';
-			$request = new Yoast_API_Request( $this->product->get_api_url(), $request_params );
+			$request = new Yoast_API_Request_v2( $this->product->get_api_url(), $request_params );
 
 			if( $request->is_valid() !== true ) {
 

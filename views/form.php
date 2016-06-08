@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * @var Yoast_Product $product
+ * @var Yoast_Product_v2 $product
  */
 $product = $this->product;
 

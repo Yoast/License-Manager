@@ -1,11 +1,11 @@
 <?php
 
-if( ! class_exists( "Yoast_API_Request", false ) ) {
+if( ! class_exists( "Yoast_API_Request_v2", false ) ) {
 
 	/**
 	* Handles requests to the Yoast EDD API
 	*/
-	class Yoast_API_Request {
+	class Yoast_API_Request_v2 {
 
 		/**
 		* @var string Request URL

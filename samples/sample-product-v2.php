@@ -5,7 +5,7 @@
  *
  * Our sample product class
  */
-class Sample_Product extends Yoast_Product {
+class Sample_Product_v2 extends Yoast_Product_v2 {
 
 	public function __construct() {
 		parent::__construct(
