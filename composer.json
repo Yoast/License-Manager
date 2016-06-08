@@ -16,14 +16,14 @@
     },
     "autoload"   : {
         "classmap": [
-            "class-api-request.php",
-            "class-license-manager.php",
-            "class-plugin-license-manager.php",
-            "class-plugin-update-manager.php",
-            "class-product.php",
-            "class-theme-license-manager.php",
-            "class-theme-update-manager.php",
-            "class-update-manager.php"
+            "class-api-request-v2.php",
+            "class-license-manager-v2.php",
+            "class-plugin-license-manager-v2.php",
+            "class-plugin-update-manager-v2.php",
+            "class-product-v2.php",
+            "class-theme-license-manager-v2.php",
+            "class-theme-update-manager-v2.php",
+            "class-update-manager-v2.php"
         ]
     }
 }
