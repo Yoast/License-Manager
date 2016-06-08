@@ -1,9 +1,9 @@
 <?php
 
-include( dirname( __FILE__ ) . '../../class-product.php' );
-include( dirname( __FILE__ ) . '../../class-license-manager.php' );
+include( dirname( __FILE__ ) . '../../class-product-v2.php' );
+include( dirname( __FILE__ ) . '../../class-license-manager-v2.php' );
 
-class Yoast_Product_Double extends Yoast_Product {
+class Yoast_Product_v2_Double extends Yoast_Product_v2 {
 
 	/**
 	 * Construct the real Product class with our fake data
@@ -14,12 +14,12 @@ class Yoast_Product_Double extends Yoast_Product {
 
 }
 
-class Yoast_License_Manager_Double extends Yoast_License_Manager {
+class Yoast_License_Manager_Double extends Yoast_License_Manager_v2 {
 
 	public $product;
 
 	public function __construct() {
-		$this->product = new Yoast_Product_Double();
+		$this->product = new Yoast_Product_v2_Double();
 
 		parent::__construct( $this->product );
 	}

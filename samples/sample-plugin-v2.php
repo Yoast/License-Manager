@@ -14,7 +14,7 @@ Text Domain: sample-plugin
  * Class Sample_Plugin
  *
  */
-class Sample_Plugin {
+class Sample_Plugin_v2 {
 
 	public function __construct() {
 
@@ -39,7 +39,7 @@ class Sample_Plugin {
 	public function load_license_manager() {
 
 		// Instantiate license class
-		$license_manager = new Yoast_Plugin_License_Manager( new Sample_Product() );
+		$license_manager = new Yoast_Plugin_License_Manager_v2( new Sample_Product_v2() );
 
 		// Setup the required hooks
 		$license_manager->setup_hooks();
@@ -59,7 +59,7 @@ class Sample_Plugin {
 	public function show_license_page() {
 
 		// Instantiate license class
-		$license_manager = new Yoast_Plugin_License_Manager( new Sample_Product() );
+		$license_manager = new Yoast_Plugin_License_Manager_v2( new Sample_Product_v2() );
 
 		?>
 		<div class="wrap">
@@ -71,4 +71,4 @@ class Sample_Plugin {
 	}
 }
 
-new Sample_Plugin();
+new Sample_Plugin_v2();

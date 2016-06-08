@@ -1,15 +1,15 @@
 <?php
 
-if ( class_exists( 'Yoast_License_Manager' ) && ! class_exists( "Yoast_Plugin_License_Manager", false ) ) {
+if ( class_exists( 'Yoast_License_Manager_v2' ) && ! class_exists( "Yoast_Plugin_License_Manager_v2", false ) ) {
 
-	class Yoast_Plugin_License_Manager extends Yoast_License_Manager {
+	class Yoast_Plugin_License_Manager_v2 extends Yoast_License_Manager_v2 {
 
 		/**
 		 * Constructor
 		 *
-		 * @param Yoast_Product $product
+		 * @param Yoast_Product_v2 $product
 		 */
-		public function __construct( Yoast_Product $product ) {
+		public function __construct( Yoast_Product_v2 $product ) {
 
 			parent::__construct( $product );
 
@@ -32,7 +32,7 @@ if ( class_exists( 'Yoast_License_Manager' ) && ! class_exists( "Yoast_Plugin_Li
 				// setup auto updater
 				require_once( dirname( __FILE__ ) . '/class-update-manager.php' );
 				require_once( dirname( __FILE__ ) . '/class-plugin-update-manager.php' );
-				new Yoast_Plugin_Update_Manager( $this->product, $this );
+				new Yoast_Plugin_Update_Manager_v2( $this->product, $this );
 			}
 		}
 

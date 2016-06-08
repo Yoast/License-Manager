@@ -2,9 +2,9 @@
 
 //set_site_transient( 'update_plugins', null );
 
-if( class_exists( 'Yoast_Update_Manager' ) && ! class_exists( "Yoast_Plugin_Update_Manager", false ) ) {
+if( class_exists( 'Yoast_Update_Manager_v2' ) && ! class_exists( "Yoast_Plugin_Update_Manager_v2", false ) ) {
 
-	class Yoast_Plugin_Update_Manager extends Yoast_Update_Manager {
+	class Yoast_Plugin_Update_Manager_v2 extends Yoast_Update_Manager_v2 {
 
 		/**
 		* Constructor
@@ -17,7 +17,7 @@ if( class_exists( 'Yoast_Update_Manager' ) && ! class_exists( "Yoast_Plugin_Upda
 		* @param string $author (optional)
 		* @param string $text_domain 
 		*/
-		public function __construct( Yoast_Product $product, $license_key ) {
+		public function __construct( Yoast_Product_v2 $product, $license_key ) {
 			parent::__construct( $product, $license_key );
 
 			// setup hooks

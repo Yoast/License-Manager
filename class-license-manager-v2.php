@@ -1,8 +1,8 @@
 <?php
 
-if ( ! interface_exists( 'iYoast_License_Manager', false ) ) {
+if ( ! interface_exists( 'iYoast_License_Manager_v2', false ) ) {
 
-	interface iYoast_License_Manager {
+	interface iYoast_License_Manager_v2 {
 
 		public function specific_hooks();
 
@@ -13,7 +13,7 @@ if ( ! interface_exists( 'iYoast_License_Manager', false ) ) {
 }
 
 
-if ( ! class_exists( 'Yoast_License_Manager', false ) ) {
+if ( ! class_exists( 'Yoast_License_Manager_v2', false ) ) {
 
 	/**
 	 * Class Yoast_License_Manager
@@ -21,7 +21,7 @@ if ( ! class_exists( 'Yoast_License_Manager', false ) ) {
 	 * @todo Maybe create a license class that contains key and option
 	 * @todo Not sure if Yoast_License_Manager is a good name for this class, it's more managing the product (plugin or theme)
 	 */
-	abstract class Yoast_License_Manager implements iYoast_License_Manager {
+	abstract class Yoast_License_Manager_v2 implements iYoast_License_Manager_v2 {
 
 		/**
 		 * @const VERSION The version number of the License_Manager class
@@ -66,9 +66,9 @@ if ( ! class_exists( 'Yoast_License_Manager', false ) ) {
 		/**
 		 * Constructor
 		 *
-		 * @param Yoast_Product $product
+		 * @param Yoast_Product_v2 $product
 		 */
-		public function __construct( Yoast_Product $product ) {
+		public function __construct( Yoast_Product_v2 $product ) {
 
 			// Set the license
 			$this->product = $product;
@@ -265,7 +265,7 @@ if ( ! class_exists( 'Yoast_License_Manager', false ) ) {
 			$url = add_query_arg( $api_params, $this->product->get_api_url() );
 
 			require_once dirname( __FILE__ ) . '/class-api-request.php';
-			$request = new Yoast_API_Request( $url );
+			$request = new Yoast_API_Request_v2( $url );
 
 			if ( $request->is_valid() !== true ) {
 				$this->set_notice( sprintf( __( "Request error: \"%s\" (%scommon license notices%s)", $this->product->get_text_domain() ), $request->get_error_message(), '<a href="http://kb.yoast.com/article/13-license-activation-notices">', '</a>' ), false );
