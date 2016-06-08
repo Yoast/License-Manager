@@ -50,6 +50,11 @@ if( ! class_exists( "Yoast_Product", false ) ) {
 		protected $author;
 
 		/**
+		 * @var string Relative file path to the plugin.
+		 */
+		protected $file;
+
+		/**
 		 * Yoast_Product constructor.
 		 *
 		 * @param string $api_url The URL of the shop running the EDD API.
@@ -60,8 +65,9 @@ if( ! class_exists( "Yoast_Product", false ) ) {
 		 * @param string $license_page_url Absolute admin URL on which users can enter their license key.
 		 * @param string $text_domain The text domain used for translating strings.
 		 * @param string $author The item author.
+		 * @param string $file The relative file path to the plugin.
 		 */
-		public function __construct( $api_url, $item_name, $slug, $version, $item_url = '', $license_page_url = '#', $text_domain = 'yoast', $author = 'Yoast' ) {
+		public function __construct( $api_url, $item_name, $slug, $version, $item_url = '', $license_page_url = '#', $text_domain = 'yoast', $author = 'Yoast', $file = '' ) {
 			$this->api_url          = $api_url;
 			$this->item_name        = $item_name;
 			$this->slug             = $slug;
@@ -70,6 +76,7 @@ if( ! class_exists( "Yoast_Product", false ) ) {
 			$this->license_page_url = admin_url( $license_page_url );
 			$this->text_domain      = $text_domain;
 			$this->author           = $author;
+			$this->file             = $file;
 
 			// Fix possible empty item url
 			if ( $this->item_url === '' ) {
@@ -208,6 +215,30 @@ if( ! class_exists( "Yoast_Product", false ) ) {
 		 */
 		public function get_version() {
 			return $this->version;
+		}
+
+		/**
+		 * Returns the file path relative to the plugins folder
+		 *
+		 * @return string
+		 */
+		public function get_file() {
+			/*
+			 * Fall back to the slug for BC reasons.
+			 *
+			 * We used to pass the file to the slug field, but this isn't supported with the shiny updates in WordPress.
+			 * WordPress uses the slug in the HTML as an ID and a slash isn't a valid
+			 */
+			return empty( $this->file ) ? $this->slug : $this->file;
+		}
+
+		/**
+		 * Sets the file path relative to the plugins folder
+		 *
+		 * @param string $file Relative file path to the plugin.
+		 */
+		public function set_file( $file ) {
+			$this->file = $file;
 		}
 
 		/**

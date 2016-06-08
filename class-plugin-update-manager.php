@@ -61,7 +61,7 @@ if( class_exists( 'Yoast_Update_Manager' ) && ! class_exists( "Yoast_Plugin_Upda
 			if ( version_compare( $this->product->get_version(), $remote_data->new_version, '<' ) ) {
 
 				// remote version is newer, add to data
-				$data->response[ $this->product->get_slug() ] = $remote_data;
+				$data->response[ $this->product->get_file() ] = $remote_data;
 
 			}
 
