@@ -116,7 +116,7 @@ if( ! class_exists( "Yoast_Update_Manager", false ) ) {
 				'wp_version'       => $wp_version,
 				'item_version'     => $this->product->get_version(),
 				'url' => home_url(),
-				'slug' => dirname( $this->product->get_slug() ),
+				'slug' => $this->product->get_slug(),
 			);
 
 			// setup request parameters
