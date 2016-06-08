@@ -3,7 +3,7 @@
 if( ! class_exists( "Yoast_Product_v2", false ) ) {
 
 	/**
-	 * Class Yoast_Product
+	 * Class Yoast_Product_v2
 	 *
 	 * @todo create a license class and store an object of it in this class
 	 */
@@ -55,7 +55,7 @@ if( ! class_exists( "Yoast_Product_v2", false ) ) {
 		protected $file;
 
 		/**
-		 * Yoast_Product constructor.
+		 * Yoast_Product_v2 constructor.
 		 *
 		 * @param string $api_url The URL of the shop running the EDD API.
 		 * @param string $item_name The item name in the EDD shop.
