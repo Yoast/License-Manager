@@ -30,8 +30,8 @@ if ( class_exists( 'Yoast_License_Manager_v2' ) && ! class_exists( "Yoast_Plugin
 		public function setup_auto_updater() {
 			if ( $this->license_is_valid() ) {
 				// setup auto updater
-				require_once( dirname( __FILE__ ) . '/class-update-manager.php' );
-				require_once( dirname( __FILE__ ) . '/class-plugin-update-manager.php' );
+				require_once( dirname( __FILE__ ) . '/class-update-manager-v2.php' );
+				require_once( dirname( __FILE__ ) . '/class-plugin-update-manager-v2.php' );
 				new Yoast_Plugin_Update_Manager_v2( $this->product, $this );
 			}
 		}
