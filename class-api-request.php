@@ -68,6 +68,15 @@ if ( ! class_exists( "Yoast_API_Request", false ) ) {
 			// fire request to shop
 			$response = wp_remote_request( $this->url, $this->args );
 
+			/**
+			 * Hook: 'license_manager_server_response' - Exposes the raw response from the license server.
+			 *
+			 * @response  array|WP_Error The raw response data.
+			 * @url       string         The requested license server URL.
+			 * @arguments array          The requested license request arguments.
+			 */
+			do_action( 'license_manager_server_response', $response, $this->url, $this->args );
+
 			// validate raw response
 			if( $this->validate_raw_response( $response ) === false ) {
 				return false;
