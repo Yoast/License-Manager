@@ -69,7 +69,7 @@ if ( ! class_exists( "Yoast_API_Request", false ) ) {
 			$response = wp_remote_request( $this->url, $this->args );
 
 			/**
-			 * Hook: 'license_manager-server_response' - Exposes the raw response from the license server.
+			 * Hook: 'license_manager_server_response' - Exposes the raw response from the license server.
 			 *
 			 * @response  array|WP_Error The raw response data.
 			 * @url       string         The requested license server URL.
