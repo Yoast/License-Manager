@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) 
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.6.0] - 2017-08-15
+### Changed
+- Normalized which URL is used to supply with the license requests.
+
+### Fixed
+- Fix issue where network activated plugins were not returning the network home url.
+
 ## [1.5.0] - 2017-02-28
 ### Added
 - Add a `custom_message` option to the response which will be shown as a custom message after the default message.
