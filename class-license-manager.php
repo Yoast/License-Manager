@@ -124,7 +124,13 @@ if ( ! class_exists( 'Yoast_License_Manager', false ) ) {
 		 */
 		public function display_admin_notices() {
 
-			if ( ! current_user_can( 'manage_options' ) ) {
+			$capability = 'manage_options';
+			// Get custom capability from product if method is implemented.
+			if ( method_exists( $this->product, 'get_license_page_capability' ) ) {
+				$capability = $this->product->get_license_page_capability();
+			}
+
+			if ( ! current_user_can( $capability ) ) {
 				return;
 			}
 
