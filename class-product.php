@@ -303,10 +303,9 @@ if ( ! class_exists( 'Yoast_Product_v2', false ) ) {
 
 		private function add_campaign_attributes( $url, $link_identifier ) {
 			$tracking_vars = array(
-				'utm_campaign' => $this->get_item_name() . ' licensing',
-				'utm_medium'   => 'link',
-				'utm_source'   => $this->get_item_name(),
-				'utm_content'  => $link_identifier
+				'utm_campaign' => sanitize_title( $this->get_item_name() ) . '-licensing',
+				'utm_medium'   => 'software',
+				'utm_source'   => sanitize_title( $this->get_item_name() ),
 			);
 
 			// URL encode tracking vars.
