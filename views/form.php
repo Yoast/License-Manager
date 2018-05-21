@@ -15,8 +15,8 @@ if( $api_host_available['availability'] === false ){
 	echo '<div class="notice notice-error inline yoast-notice-error"><p>' . sprintf( __( 'We couldn\'t create a connection to our API to verify your license key(s). Please ask your hosting company to allow outgoing connections from your server to %s.', $product->get_text_domain() ), $api_host_available['url'] ) . '</p></div>';
 }
 
-if( $api_host_available['curl_version'] !== false && version_compare( $api_host_available['curl_version'], '7.20.0', '<')){
-	echo '<div class="notice notice-error inline yoast-notice-error"><p>' . sprintf( __( 'Your server has an outdated version of the PHP module cURL (Version: %s). Please ask your hosting company to update this to a recent version of cURL. You can read more about that in our %sKnowledge base%s.', $product->get_text_domain() ), $api_host_available['curl_version'], '<a href="http://kb.yoast.com/article/90-is-my-curl-up-to-date" target="_blank">', '</a>' ) . '</p></div>';
+if( $api_host_available['curl_version'] !== false && version_compare( $api_host_available['curl_version'], '7.20.0', '<') && !$this->license_is_valid() ){
+	echo '<div class="notice notice-warning inline yoast-notice-warning"><p>' . sprintf( __( 'Your server has an older version of the PHP module cURL (Version: %s). If you are having trouble contacting the license server, please ask your hosting company to update this to a recent version of cURL. You can read more about that in our %sKnowledge base%s.', $product->get_text_domain() ), $api_host_available['curl_version'], '<a href="http://kb.yoast.com/article/90-is-my-curl-up-to-date" target="_blank">', '</a>' ) . '</p></div>';
 }
 
 // Output form tags if we're not embedded in another form
