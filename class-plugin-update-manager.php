@@ -86,7 +86,21 @@ if( class_exists( 'Yoast_Update_Manager_v2' ) && ! class_exists( 'Yoast_Plugin_U
 			}
 
 			// return api response
-			return $api_response;
+			return $this->cast_sections_property_to_array( $api_response );
+		}
+
+		/**
+		 * Casts the sections attribute to an array.
+		 *
+		 * @param $data object The object that has a sections attribute that has to casted to a array.
+		 *
+		 * @return object the transformed object.
+		 */
+		private function cast_sections_property_to_array( $data ) {
+			if ( isset( $data->sections ) ) {
+				$data->sections = (array) $data->sections;
+			}
+			return $data;
 		}
 	}
 
