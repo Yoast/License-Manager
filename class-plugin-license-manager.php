@@ -76,10 +76,21 @@ if ( class_exists( 'Yoast_License_Manager_v2' ) && ! class_exists( 'Yoast_Plugin
 					// We're not in the network admin area, show a notice
 					parent::show_license_form_heading();
 					if ( is_super_admin() ) {
-						echo '<p>' . sprintf( __( '%s is network activated, you can manage your license in the <a href="%s">network admin license page</a>.', $this->product->get_text_domain() ), $this->product->get_item_name(), $this->product->get_license_page_url() ) . '</p>';
+						echo '<p>';
+						printf(
+							__( '%s is network activated, you can manage your license in the <a href="%s">network admin license page</a>.', $this->product->get_text_domain() ),
+							$this->product->get_item_name(),
+							$this->product->get_license_page_url()
+						);
+						echo '</p>';
 					}
 					else {
-						echo '<p>' . sprintf( __( '%s is network activated, please contact your site administrator to manage the license.', $this->product->get_text_domain() ), $this->product->get_item_name() ) . '</p>';
+						echo '<p>';
+						printf(
+							__( '%s is network activated, please contact your site administrator to manage the license.', $this->product->get_text_domain() ),
+							$this->product->get_item_name()
+						);
+						echo '</p>';
 					}
 				}
 			}

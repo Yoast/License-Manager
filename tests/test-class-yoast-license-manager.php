@@ -210,7 +210,10 @@ class Test_Yoast_License_Manager extends Yst_License_Manager_UnitTestCase {
 
 		$message  = 'Your test-product license has been activated. ';
 		$message .= 'You have used 2/3 activations. ';
-		$message .= sprintf( '<a href="%s">Did you know you can upgrade your license?</a> ', $this->class->product->get_extension_url( 'license-nearing-limit-notice' ) );
+		$message .= sprintf(
+			'<a href="%s">Did you know you can upgrade your license?</a> ',
+			$this->class->product->get_extension_url( 'license-nearing-limit-notice' )
+		);
 
 		$result = $this->class->get_successful_activation_message( $api_response );
 
@@ -232,7 +235,10 @@ class Test_Yoast_License_Manager extends Yst_License_Manager_UnitTestCase {
 
 		$message  = 'Your test-product license has been activated. ';
 		$message .= 'You have an unlimited license. ';
-		$message .= sprintf( '<a href="%s">Your license is expiring in 5 days, would you like to extend it?</a> ', $this->class->product->get_extension_url( 'license-expiring-notice' ) );
+		$message .= sprintf(
+			'<a href="%s">Your license is expiring in 5 days, would you like to extend it?</a> ',
+			$this->class->product->get_extension_url( 'license-expiring-notice' )
+		);
 
 		$result = $this->class->get_successful_activation_message( $api_response );
 
@@ -254,7 +260,10 @@ class Test_Yoast_License_Manager extends Yst_License_Manager_UnitTestCase {
 
 		$message  = 'Your test-product license has been activated. ';
 		$message .= 'You have an unlimited license. ';
-		$message .= sprintf( '<a href="%s">Your license is expiring in 1 day, would you like to extend it?</a> ', $this->class->product->get_extension_url( 'license-expiring-notice' ) );
+		$message .= sprintf(
+			'<a href="%s">Your license is expiring in 1 day, would you like to extend it?</a> ',
+			$this->class->product->get_extension_url( 'license-expiring-notice' )
+		);
 
 		$result = $this->class->get_successful_activation_message( $api_response );
 
@@ -277,8 +286,14 @@ class Test_Yoast_License_Manager extends Yst_License_Manager_UnitTestCase {
 
 		$message  = 'Your test-product license has been activated. ';
 		$message .= 'You have used 2/3 activations. ';
-		$message .= sprintf( '<a href="%s">Did you know you can upgrade your license?</a> ', $this->class->product->get_extension_url( 'license-nearing-limit-notice' ) );
-		$message .= sprintf( '<a href="%s">Your license is expiring in 5 days, would you like to extend it?</a> ', $this->class->product->get_extension_url( 'license-expiring-notice' ) );
+		$message .= sprintf(
+			'<a href="%s">Did you know you can upgrade your license?</a> ',
+			$this->class->product->get_extension_url( 'license-nearing-limit-notice' )
+		);
+		$message .= sprintf(
+			'<a href="%s">Your license is expiring in 5 days, would you like to extend it?</a> ',
+			$this->class->product->get_extension_url( 'license-expiring-notice' )
+		);
 
 		$result = $this->class->get_successful_activation_message( $api_response );
 
@@ -312,7 +327,10 @@ class Test_Yoast_License_Manager extends Yst_License_Manager_UnitTestCase {
 			'error' => 'no_activations_left',
 		);
 
-		$message = sprintf( 'You\'ve reached your activation limit. You must <a href="%s">upgrade your license</a> to use it on this site.', $this->class->product->get_extension_url( 'license-at-limit-notice' ) );
+		$message = sprintf(
+			'You\'ve reached your activation limit. You must <a href="%s">upgrade your license</a> to use it on this site.',
+			$this->class->product->get_extension_url( 'license-at-limit-notice' )
+		);
 
 		$result = $this->class->get_unsuccessful_activation_message( $api_response );
 
@@ -329,7 +347,10 @@ class Test_Yoast_License_Manager extends Yst_License_Manager_UnitTestCase {
 			'error' => 'expired',
 		);
 
-		$message = sprintf( 'Your license has expired. You must <a href="%s">extend your license</a> in order to use it again.', $this->class->product->get_extension_url( 'license-expired-notice' ) );
+		$message = sprintf(
+			'Your license has expired. You must <a href="%s">extend your license</a> in order to use it again.',
+			$this->class->product->get_extension_url( 'license-expired-notice' )
+		);
 
 		$result = $this->class->get_unsuccessful_activation_message( $api_response );
 

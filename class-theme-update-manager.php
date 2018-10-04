@@ -88,7 +88,10 @@ if ( class_exists( 'Yoast_Update_Manager_v2' ) && ! class_exists( 'Yoast_Theme_U
 				return;
 			}
 
-			$update_url     = wp_nonce_url( 'update.php?action=upgrade-theme&amp;theme=' . urlencode( $this->product->get_slug() ), 'upgrade-theme_' . $this->product->get_slug() );
+			$update_url     = wp_nonce_url(
+				'update.php?action=upgrade-theme&amp;theme=' . urlencode( $this->product->get_slug() ),
+				'upgrade-theme_' . $this->product->get_slug()
+			);
 			$update_onclick = ' onclick="if ( confirm(\'' . esc_js( __( "Updating this theme will lose any customizations you have made. 'Cancel' to stop, 'OK' to update." ) ) . '\') ) {return true;}return false;"';
 			?>
 			<div id="update-nag">

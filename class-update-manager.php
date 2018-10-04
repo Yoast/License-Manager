@@ -76,7 +76,15 @@ if ( ! class_exists( 'Yoast_Update_Manager_v2', false ) ) {
 
 			?>
 			<div class="notice notice-error yoast-notice-error">
-				<p><?php printf( __( '%s failed to check for updates because of the following error: <em>%s</em>', $this->product->get_text_domain() ), $this->product->get_item_name(), $this->error_message ); ?></p>
+				<p>
+					<?php
+					printf(
+						__( '%s failed to check for updates because of the following error: <em>%s</em>', $this->product->get_text_domain() ),
+						$this->product->get_item_name(),
+						$this->error_message
+					);
+					?>
+				</p>
 			</div>
 			<?php
 		}
