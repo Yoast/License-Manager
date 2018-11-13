@@ -31,7 +31,13 @@ if ( class_exists( 'Yoast_License_Manager_v2' ) && ! class_exists( 'Yoast_Theme_
 		 * Add license page and add it to Themes menu
 		 */
 		public function add_license_menu() {
-			add_theme_page( sprintf( __( '%s License', $this->product->get_text_domain() ), $this->product->get_item_name() ), __( 'Theme License', $this->product->get_text_domain() ), 'manage_options', 'theme-license', array( $this, 'show_license_page' ) );
+			add_theme_page(
+				sprintf( __( '%s License', $this->product->get_text_domain() ), $this->product->get_item_name() ),
+				__( 'Theme License', $this->product->get_text_domain() ),
+				'manage_options',
+				'theme-license',
+				array( $this, 'show_license_page' )
+			);
 		}
 
 		/**
